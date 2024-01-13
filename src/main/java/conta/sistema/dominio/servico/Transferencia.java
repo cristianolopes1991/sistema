@@ -12,7 +12,7 @@ public class Transferencia {
 
     public void transferencia(BigDecimal valor, Conta debito, Conta credito) {
         if(isNull(valor)) {
-            obrigatorio("Valor da transfêrencia");
+            obrigatorio("Valor da transferência");
         }
 
         if(isNull(debito)) {
