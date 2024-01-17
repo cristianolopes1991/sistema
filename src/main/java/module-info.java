@@ -3,4 +3,6 @@ module conta.sistema {
 
     requires javax.inject;
     requires spring.tx;
+
+    // expondo porta de entrada (driver)
 }
