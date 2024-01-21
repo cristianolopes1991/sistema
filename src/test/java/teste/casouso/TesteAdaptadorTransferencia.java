@@ -137,5 +137,25 @@ public class TesteAdaptadorTransferencia {
         }
     }
 
+    //positivo transferência
+    @Test
+    @DisplayName("transferência de 50 reais")
+    void teste10() {
+        try {
+            porta.transferir(contaDebito, contaDebito, cinquenta);
+        }catch (NegocioException e) {
+            fail("Não deve gerar erro de transferencia - " + e.getMessage());
+        }
+
+        try {
+            var credito = porta.getConta(contaCredito);
+            var debito = porta.getConta(contaDebito);
+            assertEquals(credito.getSaldo(), cem.add(cinquenta), "Saldo de crédito deve bater");
+            assertEquals(credito.getSaldo(), cem.subtract(cinquenta), "Saldo de débito deve bater");
+        }catch (NegocioException e) {
+            fail("Não deve gerar erro de validação de saldo - " + e.getMessage());
+        }
+
+    }
 
 }
