@@ -14,4 +14,5 @@ import org.junit.runner.RunWith;
         "teste.casouso"
 })
 public class SuiteCore {
+    // 100% da solução testada independente de front-end e serviços externos (banco de dados)
 }
